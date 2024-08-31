@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  background-color: bisque;
+}
+header {
+  border: 1px black solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 5%;
+}
+header h1 {
+  font-size: 2rem;
+}
+header nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 99px;
+  padding: 10px;
+}
+header nav a.active {
+  color: white;
+  background-color: black;
+}
+header nav a:hover {
+  color: white;
+  background-color: black;
+}
+
+header nav:hover > a:not(:hover) {
+  color: black;
+  background-color: bisque;
+}
+.heropage {
+  background-image: url("../Project/pics/assets/1x/Asset 13.png");
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+.cloud {
+  background-image: url("../Project/pics/assets/1x/Asset 13.png"); /* Ensure this path is correct */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Adjust text color for better visibility */
+  text-align: center;
+}
