@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar1 {
+  width: 100%;
+  max-width: 100vw;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  align-items: flex-start;
+}
+
+.navbar2 {
+  width: 100%;
+  max-width: 100vw;
+  height: 30px;
+  border: 1px solid black;
+  display: flex;
+  align-items: flex-start;
+}
+
+.HTMLTUT {
+  width: 25%;
+  height: 100vh;
+  border: 1px solid black;
+  background-color: beige;
+}
+
+.navbar1 .items {
+  background-color: salmon;
+  width: 200px;
+  height: 50px;
+  border: 1px solid black;
+  flex: 1;
+}
+
+.navbar2 .items {
+  background-color: aqua;
+  width: 200px;
+  height: 30px;
+  border: 1px solid black;
+  flex: 1;
+}
