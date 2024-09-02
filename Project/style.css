@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 html {
-  background-color: bisque;
 }
 header {
   border: 1px black solid;
@@ -38,21 +37,23 @@ header nav:hover > a:not(:hover) {
   color: black;
   background-color: bisque;
 }
-.heropage {
-  background-image: url("../Project/pics/assets/1x/Asset 13.png");
-  background-size: cover;
-  height: 100vh;
-  width: 100%;
-}
 .cloud {
-  background-image: url("../Project/pics/assets/1x/Asset 13.png"); /* Ensure this path is correct */
+  height: 125vh;
+  width: 100%;
+  position: absolute;
+}
+.heropage {
   background-size: cover;
-  background-position: center;
   height: 100vh;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white; /* Adjust text color for better visibility */
-  text-align: center;
+  position: relative;
+  background-image: url("/Project/pics/assets/1x/Asset\ 16.png"),
+    url("./pics/assets/1x/Asset\ 13.png");
+}
+
+.flowers {
+  position: absolute;
+  width: 35%;
+  height: auto;
+  margin-left: 10%;
 }
