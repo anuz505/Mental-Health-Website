@@ -3,8 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-html {
-}
+
 header {
   border: 1px black solid;
   display: flex;
@@ -13,8 +12,17 @@ header {
   height: 100px;
   padding: 0 5%;
 }
-header h1 {
-  font-size: 2rem;
+.hero-text h1 {
+  font-size: 3.5rem;
+  z-index: 1;
+  position: relative;
+  color: black;
+}
+.hero-text p {
+  font-size: 1.25rem;
+  z-index: 1;
+  position: relative;
+  color: black;
 }
 header nav a {
   text-decoration: none;
@@ -41,18 +49,42 @@ header nav:hover > a:not(:hover) {
   height: 125vh;
   width: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 .heropage {
-  background-size: cover;
+  background-image: url("/Project/pics/assets/1x/Asset 16.png"),
+    url("./pics/assets/1x/Asset 13.png");
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
   height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column; /* Arrange children in a column */
+  align-items: flex-start;
+  justify-content: center; /* Center content vertically */
   position: relative;
-  background-image: url("/Project/pics/assets/1x/Asset\ 16.png"),
-    url("./pics/assets/1x/Asset\ 13.png");
+  color: white;
+  text-align: left;
+  padding-left: 20px;
+}
+.cta-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .flowers {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 35%;
   height: auto;
   margin-left: 10%;
