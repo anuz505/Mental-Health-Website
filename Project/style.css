@@ -13,6 +13,7 @@ header {
   padding: 0 5%;
 }
 .hero-text h1 {
+  margin-top: 20px;
   font-size: 3.5rem;
   z-index: 1;
   position: relative;
@@ -24,6 +25,22 @@ header {
   position: relative;
   color: black;
 }
+.cta-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+}
+
 header nav a {
   text-decoration: none;
   color: black;
@@ -53,32 +70,42 @@ header nav:hover > a:not(:hover) {
   left: 0;
   z-index: 0;
 }
+/*Animation that moves the background*/
+@keyframes jigglyBackground {
+  0% {
+    background-position: 50% 50%;
+  }
+  25% {
+    background-position: 52% 48%;
+  }
+  50% {
+    background-position: 48% 52%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+
 .heropage {
   background-image: url("/Project/pics/assets/1x/Asset 16.png"),
-    url("./pics/assets/1x/Asset 13.png");
-  background-size: cover, cover;
-  background-position: center, center;
-  background-repeat: no-repeat, no-repeat;
+    url("./pics/assets/1x/patches.png"), url("./pics/assets/1x/Asset 13.png");
+  background-size: cover, contain, cover;
+  background-position: 0% 0%, center left, center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
   height: 100vh;
   width: 100%;
   display: flex;
-  flex-direction: column; /* Arrange children in a column */
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: center; /* Center content vertically */
+  justify-content: center;
   position: relative;
   color: white;
   text-align: left;
   padding-left: 20px;
-}
-.cta-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: white;
-  background-color: black;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  animation: jigglyBackground 20s linear infinite;
 }
 
 .flowers {
