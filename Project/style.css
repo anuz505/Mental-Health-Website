@@ -36,9 +36,13 @@ header {
   cursor: pointer;
 }
 
-button:hover {
+.cta-button:hover {
   background-color: white;
   color: black;
+}
+
+header {
+  height: 80px;
 }
 
 header nav a {
@@ -60,7 +64,7 @@ header nav a:hover {
 
 header nav:hover > a:not(:hover) {
   color: black;
-  background-color: bisque;
+  background-color: white;
 }
 .cloud {
   height: 125vh;
@@ -70,19 +74,28 @@ header nav:hover > a:not(:hover) {
   left: 0;
   z-index: 0;
 }
+.yellowhand {
+  position: absolute;
+  left: -12%;
+  height: 35%;
+  top: 8%;
+}
 /*Animation that moves the background*/
 @keyframes jigglyBackground {
   0% {
     background-position: 50% 50%;
   }
-  25% {
+  20% {
     background-position: 52% 48%;
   }
-  50% {
+  40% {
     background-position: 48% 52%;
   }
-  75% {
-    background-position: 50% 50%;
+  60% {
+    background-position: 52% 52%;
+  }
+  80% {
+    background-position: 48% 48%;
   }
   100% {
     background-position: 50% 50%;
@@ -106,13 +119,24 @@ header nav:hover > a:not(:hover) {
   text-align: left;
   padding-left: 20px;
   animation: jigglyBackground 20s linear infinite;
+  transition: all ease-in 0.5s;
 }
 
 .flowers {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 1.5%;
+  left: -5%;
   width: 35%;
   height: auto;
   margin-left: 10%;
+  z-index: 1;
+}
+.sparkle {
+  position: absolute;
+  top: 2%;
+  left: -2%;
+  width: 35%;
+  height: auto;
+  margin-left: 10%;
+  z-index: 1;
 }
