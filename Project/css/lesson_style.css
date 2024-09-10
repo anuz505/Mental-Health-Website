@@ -60,7 +60,7 @@ header nav:hover > a:not(:hover) {
   position: relative;
 }
 
-.container button:hover {
+.container .unlocked:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   background-color: transparent;
@@ -75,7 +75,7 @@ header nav:hover > a:not(:hover) {
   color: white;
 }
 
-.container button::after {
+.container .unlocked::after {
   content: attr(data-hover);
   position: absolute;
   top: 100%;
@@ -92,7 +92,19 @@ header nav:hover > a:not(:hover) {
 }
 
 .container .locked::after {
-  display: none;
+  content: "Locked";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  background-color: #d3a13d;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
 }
 
 .container button:hover::after {
