@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  border: 1px black solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 5%;
+}
+header nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 99px;
+  padding: 10px;
+}
+header nav a.active {
+  color: white;
+  background-color: black;
+}
+header nav a:hover {
+  color: white;
+  background-color: black;
+}
+
+header nav:hover > a:not(:hover) {
+  color: black;
+  background-color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  background-color: #d4ccc5;
+}
+
+.container button {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  /* background-color: #132b3b; Green background */
+  background-color: #be6a5d;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s,
+    border-color 0.3s;
+  position: relative;
+}
+
+.container button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+  border-color: #be6a5d;
+  color: #132b3b;
+}
+.container .locked {
+  background-color: #132b3b;
+}
+.container .locked:hover {
+  background-color: #132b3b;
+  color: white;
+}
+
+.container button::after {
+  content: attr(data-hover);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  background-color: #d3a13d;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.container .locked::after {
+  display: none;
+}
+
+.container button:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Positioning buttons diagonally */
+.container button:nth-child(1) {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  /* background-color: #be6a5d; */
+}
+
+.container button:nth-child(2) {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+.container button:nth-child(3) {
+  position: absolute;
+  top: 60%;
+  left: 70%;
+}
