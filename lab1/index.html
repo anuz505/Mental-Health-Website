@@ -24,6 +24,25 @@
       <div class="items"></div>
     </div>
     <div class="container">
+      <form>
+        <label>Name</label>
+        <input type="text" id="text-name" onkeyup="myFunction()" />
+        <span class="result"></span>
+      </form>
+      <form>
+        <label>Number1 </label>
+        <input id="num1" type="number" />
+        <label>Number2</label>
+        <input id="num2" type="number" />
+        <label>operation</label>
+
+        <select id="operation">
+          <option value="+">Add</option>
+          <option value="-">Subtract</option>
+        </select>
+        <button type="button" onclick="add()">Submit</button>
+        <span class="addreslt"></span>
+      </form>
       <div class="HTMLTUT">
         <div class="items"></div>
         <div class="items"></div>
@@ -35,4 +54,5 @@
       <div class="item"></div>
     </div>
   </body>
+  <script src="/lab1/script.js"></script>
 </html>

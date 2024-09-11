@@ -17,19 +17,30 @@
     </nav>
   </header>
   <body>
-    <div class="text">
-      <h1>Welcome to Mindful Journey</h1>
+    <div class="Main-container">
+      <div class="text">
+        <h1>Welcome to Mindful Journey</h1>
+      </div>
+      <section class="container">
+        <button
+          class="unlocked"
+          data-hover="Start with the basics"
+          onclick="navigateTo('/Project/level/beginner.html')"
+        >
+          Beginner
+        </button>
+        <button class="locked" data-hover="Take it to the next level">
+          Intermediate
+        </button>
+        <button class="locked" data-hover="Master your Mindfulness">
+          Advanced
+        </button>
+      </section>
     </div>
-    <section class="container">
-      <button class="unlocked" data-hover="Start with the basics">
-        Beginner
-      </button>
-      <button class="locked" data-hover="Take it to the next level">
-        Intermediate
-      </button>
-      <button class="locked" data-hover="Master your Mindfulness">
-        Advanced
-      </button>
-    </section>
+    <script>
+      function navigateTo(url) {
+        window.location.href = url;
+      }
+    </script>
   </body>
 </html>

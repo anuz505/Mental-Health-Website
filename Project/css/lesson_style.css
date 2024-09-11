@@ -38,7 +38,7 @@ header nav:hover > a:not(:hover) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 120vh;
   position: relative;
   background-color: #d4ccc5;
 }
@@ -48,7 +48,7 @@ header nav:hover > a:not(:hover) {
   height: 250px;
   border-radius: 50%;
   border: 2px solid transparent;
-  /* background-color: #132b3b; Green background */
+
   background-color: #be6a5d;
   color: white;
   font-size: 20px;
@@ -130,4 +130,17 @@ header nav:hover > a:not(:hover) {
   position: absolute;
   top: 60%;
   left: 70%;
+}
+
+.text h1 {
+  font-size: 3rem; /* Adjust the size as needed */
+  font-weight: 700; /* Bold font weight */
+  color: var(--color-primary); /* Use a primary color variable */
+  text-align: center; /* Center align the text */
+  margin: 20px 0; /* Add some margin for spacing */
+  text-transform: uppercase; /* Transform text to uppercase */
+  letter-spacing: 2px; /* Add some letter spacing */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle text shadow */
+  border-bottom: 2px solid var(--color-accent); /* Add a bottom border */
+  padding-bottom: 10px; /* Add some padding at the bottom */
 }
