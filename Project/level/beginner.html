@@ -3,19 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/individual_lesson.css" />
     <title>Beginner Lessons</title>
   </head>
+  <header>
+    <h1>AuraSync</h1>
+    <nav>
+      <a href="/Project/index.html">Home</a>
+      <a href="#about">About</a>
+      <a href="/Project/lesson.html" class="active">Lessons</a>
+      <a href="#Profile">Profile</a>
+    </nav>
+  </header>
   <body>
     <div class="lessons">
       <div class="lesson1">
-        <h1>Mindful Breathing</h1>
+        <div class="text">
+          <h1 class="l1">Lesson 1</h1>
+          <h1>Mindful Breathing</h1>
+        </div>
+        <div class="timer-container">
+          <div class="timer-display" id="timer">00:00:00</div>
+          <div class="buttons">
+            <button id="start-btn" class="btn">Start</button>
+            <button id="pause-btn" class="btn">Pause</button>
+            <button id="reset-btn" class="btn">Reset</button>
+          </div>
+        </div>
       </div>
-      <div class="lesson2">
-        <h1>Gratitude Practice</h1>
-      </div>
-      <div class="lesson3">
-        <h1>Visualization</h1>
+      <div class="gif">
+        <img
+          loading="lazy"
+          decoding="async"
+          width="500"
+          height="500"
+          src="https://opryshok.com/wp-content/uploads/2023/10/4-7-8 breathing.gif"
+          data-lazy-type="image"
+          data-lazy-src="https://opryshok.com/wp-content/uploads/2023/10/4-7-8 breathing.gif"
+          alt="What is the 4-7-8 breathing method"
+          class="lazy wp-image-3294 lazy-loaded"
+        />
       </div>
     </div>
   </body>
+  <script>
+    let timerInterval;
+    let elapsedTime = 0;
+    let isPaused = true;
+
+    const timerDisplay = document.getElementById("timer");
+    const startBtn = document.getElementById("start-btn");
+    const pauseBtn = document.getElementById("pause-btn");
+    const resetBtn = document.getElementById("reset-btn");
+
+    function updateTime() {
+      const hours = Math.floor(elapsedTime / 3600);
+      const minutes = Math.floor((elapsedTime % 3600) / 60);
+      const seconds = elapsedTime % 60;
+
+      timerDisplay.textContent = `${String(hours).padStart(2, "0")}:${String(
+        minutes
+      ).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    }
+
+    function startTimer() {
+      if (isPaused) {
+        isPaused = false;
+        timerInterval = setInterval(() => {
+          elapsedTime++;
+          updateTime();
+        }, 1000);
+      }
+    }
+
+    function pauseTimer() {
+      isPaused = true;
+      clearInterval(timerInterval);
+    }
+
+    function resetTimer() {
+      isPaused = true;
+      clearInterval(timerInterval);
+      elapsedTime = 0;
+      updateTime();
+    }
+
+    startBtn.addEventListener("click", startTimer);
+    pauseBtn.addEventListener("click", pauseTimer);
+    resetBtn.addEventListener("click", resetTimer);
+
+    updateTime(); // Initial display
+  </script>
 </html>

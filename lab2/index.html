@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid black;
+      }
+      .container {
+        width: 20%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <h1>Register</h1>
+      <div class="container">
+        <form class="Form">
+          <label>Username</label>
+          <input type="text" id="Username" />
+          <label for="">Password</label>
+          <input type="text" id="Password" />
+          <button onclick=" validateForm(event)">Register</button>
+        </form>
+      </div>
+      <div class="result"></div>
+    </div>
+  </body>
+  <script>
+    function validateForm(event) {
+      event.preventDefault();
+      const username = document.getElementById("Username").value;
+      const Password = document.getElementById("Password").value;
+      let i = 0;
+      if (Password.match(/[a-z]+/)) {
+        i++;
+        console.log(i);
+      }
+      if (Password.match(/[A-Z]+/)) {
+        i++;
+        console.log(i);
+      }
+      if (Password.match(/[0-9]+/)) {
+        i++;
+        console.log(i);
+      }
+      if (Password.match(/[!@#$%^&*]+/)) {
+        i++;
+        console.log(i);
+      }
+
+      if (username === "admin" && Password === "admin123") {
+        console.log("logged in");
+        // document.querySelector(".result").innerHTML = `<h1>Logged in</h1>`;
+        alert("login succesful");
+      }
+    }
+  </script>
+</html>

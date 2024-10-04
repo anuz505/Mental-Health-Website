@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -98,23 +101,26 @@ header nav:hover > a:not(:hover) {
 }
 .hero-text h1 {
   margin-top: 20px;
-  font-size: 4rem;
+  font-size: 3rem;
   z-index: 1;
   position: relative;
-  color: black;
+  color: #192b3d;
+  font-family: "Dela Gothic One";
+  font-weight: 400;
 }
 .hero-text p {
   font-size: 1.25rem;
   z-index: 1;
   position: relative;
   color: black;
+  font-family: "Albert Sans";
 }
 .cta-button {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 1rem;
   color: white;
-  background-color: black;
+  background-color: #cc5b4f;
   border: none;
   border-radius: 5px;
   cursor: pointer;

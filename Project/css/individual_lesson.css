@@ -1,0 +1,90 @@
+:root {
+  --color-primary: #3498db; /* Bright Blue */
+  --color-secondary: #2ecc71; /* Fresh Green */
+  --color-accent: #e74c3c; /* Vivid Red */
+  --color-background: #ecf0f1; /* Light Gray */
+  --color-text: #2c3e50; /* Dark Blue-Gray */
+  --color-white: #ffffff; /* White */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  border: 1px black solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 5%;
+}
+
+header nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 99px;
+  padding: 10px;
+}
+header nav a.active {
+  color: white;
+  background-color: black;
+}
+header nav a:hover {
+  color: white;
+  background-color: black;
+}
+
+header nav:hover > a:not(:hover) {
+  color: black;
+  background-color: white;
+}
+.lesson1 {
+  display: flex;
+  justify-content: center;
+}
+
+.timer-container {
+  background-color: var(--color-white);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+}
+
+.timer-title {
+  font-size: 2rem;
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+
+.timer-display {
+  font-size: 3rem;
+  color: var(--color-text);
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: var(--color-white);
+}
+
+.btn:hover {
+  background-color: var(--color-accent); /* Change to accent color on hover */
+}
