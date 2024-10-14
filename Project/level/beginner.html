@@ -49,8 +49,16 @@
       <div id="myModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
-          <h2>Hello! I'm a pop-up</h2>
-          <p>You can customize me as much as you like!</p>
+          <span class="close">&times;</span>
+
+          <h2>
+            🎉 Congrats! You've Completed the Mindful Breathing Exercise! 🎉
+          </h2>
+          <b>Badge Earned: "Calm Beginner" 🏅</b>
+          <p>
+            Take a moment to notice how you feel. Your focus and calm have
+            improved!
+          </p>
           <button id="continue">Continue</button>
         </div>
       </div>
@@ -111,8 +119,17 @@
 
     var continueBTN = document.getElementById("continue");
 
+    var span = document.getElementsByClassName("close")[0];
+
     btn.onclick = () => {
       modal.style.display = "block";
+    };
+    span.onclick = function () {
+      modal.style.display = "none";
+    };
+
+    continueBTN.onclick = () => {
+      window.location.href = "beginner1.html";
     };
   </script>
 </html>
