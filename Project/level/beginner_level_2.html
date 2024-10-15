@@ -24,14 +24,15 @@
           <p>Write things you are grateful for fostering a postive thinking.</p>
         </div>
       </div>
-      <form id="gratitude-form">
+      <form id="gratitude-form" class="gratitude-form">
         <label>1.</label>
         <textarea id="input1"></textarea>
         <label>2.</label>
         <textarea id="input2"></textarea>
         <label>3.</label>
         <textarea id="input3"></textarea>
-        <button type="submit">Submit</button>
+        <button type="submit" class="next">Submit</button>
+        <div class="submitted"></div>
       </form>
       <button id="next" class="next">Next</button>
       <div id="myModal" class="modal">
@@ -62,6 +63,20 @@
         <p>2. ${input2}</p>
         <p>3. ${input3}</p>
       `;
+          // Clear the input fields
+          document.getElementById("input1").value = "";
+          document.getElementById("input2").value = "";
+          document.getElementById("input3").value = "";
+          // Show the submitted message
+          const submittedMessage = document.querySelector(".submitted");
+          submittedMessage.innerHTML = "Submitted!";
+          submittedMessage.classList.add("fade-in");
+
+          // Fade away the message after 3 seconds
+          setTimeout(() => {
+            submittedMessage.classList.remove("fade-in");
+            submittedMessage.classList.add("fade-out");
+          }, 3000);
         });
 
       var modal = document.getElementById("myModal");
@@ -81,16 +96,8 @@
       };
 
       continueBTN.onclick = () => {
-        window.location.href = "beginner1.html";
+        window.location.href = "beginner_level_3.html";
       };
-      document
-        .getElementById("gratitude-form")
-        .addEventListener("input", function () {
-          const input1 = document.getElementById("input1").value;
-          const input2 = document.getElementById("input2").value;
-          const input3 = document.getElementById("input3").value;
-          continueBTN.disabled = !input1 || !input2 || !input3;
-        });
     </script>
   </body>
 </html>

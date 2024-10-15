@@ -24,16 +24,27 @@
       </div>
       <section class="container">
         <button
+          id="beginner-btn"
           class="unlocked"
           data-hover="Start with the basics"
-          onclick="navigateTo('/Project/level/beginner.html')"
+          onclick="navigateTo('/Project/level/beginner_level_1.html'
+            
+          )"
         >
           Beginner
         </button>
-        <button class="locked" data-hover="Take it to the next level">
+        <button
+          id="intermediate-btn"
+          class="locked"
+          data-hover="Take it to the next level"
+        >
           Intermediate
         </button>
-        <button class="locked" data-hover="Master your Mindfulness">
+        <button
+          id="advanced-btn"
+          class="locked"
+          data-hover="Master your Mindfulness"
+        >
           Advanced
         </button>
       </section>
@@ -41,6 +52,12 @@
     <script>
       function navigateTo(url) {
         window.location.href = url;
+      }
+      const badge = localStorage.getItem("lesson3 badge");
+      const intermediateBtn = document.getElementById("intermediate-btn");
+      if (badge === "mindfulness_newbie") {
+        intermediateBtn.classList.remove("locked");
+        intermediateBtn.classList.add("unlocked");
       }
     </script>
   </body>
