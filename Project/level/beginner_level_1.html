@@ -129,6 +129,14 @@
     };
 
     continueBTN.onclick = () => {
+      // Get the existing badges from local storage or initialize an empty array
+      let badges = JSON.parse(localStorage.getItem("badges")) || [];
+
+      // Add the new badge to the array
+      badges.push("Calm Beginner");
+
+      // Store the updated array back in local storage
+      localStorage.setItem("badges", JSON.stringify(badges));
       window.location.href = "beginner_level_2.html";
     };
   </script>

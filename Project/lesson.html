@@ -11,9 +11,9 @@
     <h1>AuraSync</h1>
     <nav>
       <a href="/Project/index.html">Home</a>
-      <a href="#about">About</a>
+      <a href="./aboutus.html">About</a>
       <a href="#lessons" class="active">Lessons</a>
-      <a href="#Profile">Profile</a>
+      <a href="./profile.html">Profile</a>
     </nav>
   </header>
   <body>
@@ -37,9 +37,6 @@
           id="intermediate-btn"
           class="locked"
           data-hover="Take it to the next level"
-          onclick="navigateTo('/Project/level/intermediate_level_1.html'
-              
-            )"
         >
           Intermediate
         </button>
@@ -56,11 +53,14 @@
       function navigateTo(url) {
         window.location.href = url;
       }
-      const badge = localStorage.getItem("lesson3 badge");
+      const badges = JSON.parse(localStorage.getItem("badges"));
+      const badge = badges.find((badge) => badge === "mindfulness_newbie");
       const intermediateBtn = document.getElementById("intermediate-btn");
       if (badge === "mindfulness_newbie") {
         intermediateBtn.classList.remove("locked");
         intermediateBtn.classList.add("unlocked");
+        intermediateBtn.onclick = () =>
+          navigateTo("/Project/level/intermediate_level_1.html");
       }
     </script>
   </body>

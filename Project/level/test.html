@@ -3,131 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coping Strategies Decision Tree</title>
+    <title>Profile - AuraSync</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-        background-color: #f4f4f4;
-      }
-      h1 {
-        text-align: center;
-        color: #333;
-      }
-      #question-area,
-      #result-area {
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        max-width: 600px;
-      }
-      button {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        background-color: #3498db;
-        color: #fff;
-        transition: background-color 0.3s;
-      }
-      button:hover {
-        background-color: #2980b9;
-      }
+      /* Your CSS styles here */
     </style>
   </head>
   <body>
-    <h1>Coping Strategies Decision Tree</h1>
+    <header>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../aboutus.html">About</a>
+        <a href="/Project/lesson.html">Lessons</a>
+        <a href="#Profile" class="active">Profile</a>
+      </nav>
+    </header>
 
-    <div id="question-area">
-      <p id="question">How are you feeling right now?</p>
-      <button onclick="selectOption('stressed')">Stressed</button>
-      <button onclick="selectOption('anxious')">Anxious</button>
-      <button onclick="selectOption('sad')">Sad</button>
-      <button onclick="selectOption('angry')">Angry</button>
-    </div>
-
-    <div id="result-area" style="display: none">
-      <p id="result"></p>
-      <button onclick="restart()">Start Over</button>
+    <div class="profile-container">
+      <h1>Profile</h1>
+      <p id="username2"></p>
+      <p id="bio2"></p>
+      <img
+        id="flag"
+        class="flag"
+        src=""
+        alt="Country Flag"
+        style="display: none"
+      />
+      <button id="logout" onclick="logout()">Logout</button>
     </div>
 
     <script>
-      // Function to handle user selection
-      function selectOption(feeling) {
-        const questionArea = document.getElementById("question-area");
-        const question = document.getElementById("question");
+      function renderUsername() {
+        const usernameGet = localStorage.getItem("username");
+        const bioGet = localStorage.getItem("bio");
+        const countryGet = localStorage.getItem("country");
 
-        if (feeling === "stressed") {
-          question.textContent =
-            "Is the stress related to work, relationships, or personal expectations?";
-          questionArea.innerHTML = `
-          <p>${question.textContent}</p>
-          <button onclick="showStrategy('Take a 5-minute break and practice deep breathing')">Work</button>
-          <button onclick="showStrategy('Have an open conversation with your loved one')">Relationships</button>
-          <button onclick="showStrategy('Take a step back and set realistic goals')">Personal Expectations</button>
-        `;
-        } else if (feeling === "anxious") {
-          question.textContent =
-            "Are you anxious about something specific or is it general anxiety?";
-          questionArea.innerHTML = `
-          <p>${question.textContent}</p>
-          <button onclick="showStrategy('Try progressive muscle relaxation')">Specific</button>
-          <button onclick="showStrategy('Practice mindfulness to ground yourself in the present')">General</button>
-        `;
-        } else if (feeling === "sad") {
-          question.textContent =
-            "Are you feeling sad due to a specific event or is it more of a general feeling?";
-          questionArea.innerHTML = `
-          <p>${question.textContent}</p>
-          <button onclick="showStrategy('Talk to a friend or family member about your feelings')">Specific Event</button>
-          <button onclick="showStrategy('Engage in an activity you enjoy to lift your mood')">General Sadness</button>
-        `;
-        } else if (feeling === "angry") {
-          question.textContent =
-            "Is your anger directed towards a person or situation?";
-          questionArea.innerHTML = `
-          <p>${question.textContent}</p>
-          <button onclick="showStrategy('Take some time to cool off before responding')">Person</button>
-          <button onclick="showStrategy('Practice reframing the situation to see it from a new perspective')">Situation</button>
-        `;
+        document.getElementById("username2").textContent = usernameGet
+          ? `Username: ${usernameGet}`
+          : "No user information found.";
+        document.getElementById("bio2").textContent = bioGet
+          ? `Bio: ${bioGet}`
+          : "";
+
+        if (countryGet) {
+          fetch(`https://restcountries.com/v3.1/name/${countryGet}`)
+            .then((response) => response.json())
+            .then((data) => {
+              if (data && data.length > 0) {
+                const flagUrl = data[0].flags.svg;
+                const flagElement = document.getElementById("flag");
+                flagElement.src = flagUrl;
+                flagElement.style.display = "block";
+              } else {
+                console.error("No data found for the specified country.");
+              }
+            })
+            .catch((error) => {
+              console.error("Error fetching country data:", error);
+            });
         }
       }
 
-      // Function to display the final coping strategy
-      function showStrategy(strategy) {
-        const resultArea = document.getElementById("result-area");
-        const questionArea = document.getElementById("question-area");
-        const result = document.getElementById("result");
-
-        result.textContent = `Suggested Coping Strategy: ${strategy}`;
-        questionArea.style.display = "none";
-        resultArea.style.display = "block";
+      function logout() {
+        localStorage.removeItem("username");
+        localStorage.removeItem("bio");
+        localStorage.removeItem("country");
+        document.getElementById("loginModal").style.display = "block";
+        location.reload();
       }
 
-      // Function to restart the decision tree
-      function restart() {
-        const resultArea = document.getElementById("result-area");
-        const questionArea = document.getElementById("question-area");
-
-        resultArea.style.display = "none";
-        questionArea.style.display = "block";
-
-        // Reset the question and options to the initial state
-        questionArea.innerHTML = `
-    <p id="question">How are you feeling right now?</p>
-    <button onclick="selectOption('stressed')">Stressed</button>
-    <button onclick="selectOption('anxious')">Anxious</button>
-    <button onclick="selectOption('sad')">Sad</button>
-    <button onclick="selectOption('angry')">Angry</button>
-  `;
-      }
+      // Initial render
+      renderUsername();
     </script>
   </body>
 </html>

@@ -16,7 +16,7 @@
     </nav>
   </header>
   <body>
-    <div class="lessons" style="margin-left: 0">
+    <div class="lessons" style="margin-left: 10%">
       <div class="lesson1" style="height: 75vh">
         <div class="text" style="width: 350px; padding: 20px">
           <h1 class="l1">Lesson 1</h1>
@@ -69,16 +69,6 @@
           class="lazy wp-image-3294 lazy-loaded"
         />
       </div>
-      <div class="twohands">
-        <img class="Brain" src="../pics/assets/1x/Brain.png" />
-        <img class="lefthand" src="../pics/assets/1x/left hand.png" />
-        <img class="righthand" src="../pics/assets/1x/Right hand.png" />
-
-        <img
-          class="BackgroundGrass"
-          src="../pics/assets/1x/BackgroundGrass.png"
-        />
-      </div>
 
       <button id="next" class="next">Next</button>
       <div id="myModal" class="modal">
@@ -87,12 +77,13 @@
           <span class="close">&times;</span>
 
           <h2>
-            🎉 Congrats! You've Completed the Mindful Breathing Exercise! 🎉
+            🎉 Amazing Work! You've Mastered the Box Breathing Technique! 🎉
           </h2>
-          <b>Badge Earned: "Calm Beginner" 🏅</b>
+          <b>Badge Earned: "Serene Mind" 🧘‍♂️</b>
           <p>
-            Take a moment to notice how you feel. Your focus and calm have
-            improved!
+            You've successfully completed the box breathing exercise! Feel the
+            peace within you, and remember, this is a powerful tool to center
+            yourself anytime.
           </p>
           <button id="continue">Continue</button>
         </div>
@@ -164,7 +155,15 @@
     };
 
     continueBTN.onclick = () => {
-      window.location.href = "beginner_level_2.html";
+      // Get the existing badges from local storage or initialize an empty array
+      let badges = JSON.parse(localStorage.getItem("badges")) || [];
+
+      // Add the new badge to the array
+      badges.push("serene_mind");
+
+      // Store the updated array back in local storage
+      localStorage.setItem("badges", JSON.stringify(badges));
+      window.location.href = "./intermediate_level_2.html";
     };
   </script>
 </html>

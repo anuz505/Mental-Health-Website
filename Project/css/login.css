@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;700&family=Dela+Gothic+One&display=swap");
+
+.login-container {
+  background-color: #192b3d;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+}
+
+.login-container h1 {
+  font-family: "Dela Gothic One";
+  color: white;
+  margin-bottom: 20px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+}
+
+.login-container button {
+  background-color: #cc5b4f;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  font-family: "Albert Sans", sans-serif;
+
+  transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+  background-color: #b44a3e;
+}
+
+.login-container p {
+  color: white;
+  margin-top: 20px;
+}

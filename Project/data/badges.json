@@ -1,0 +1,29 @@
+{
+  "badges": [
+    {
+      "name": "Mindfulness Newbie",
+      "description": "Awarded for completing the beginner mindfulness course.",
+      "image": "../pics/badges/Mindfullnessnewbie.jpeg"
+    },
+    {
+      "name": "Serene Mind",
+      "description": "Awarded for completing the intermediate mindfulness course.",
+      "image": "../pics/badges/serenemind.jpeg"
+    },
+    {
+      "name": "Advanced Guru",
+      "description": "Awarded for completing the advanced mindfulness course.",
+      "image": "badges/advanced_guru.png"
+    },
+    {
+      "name": "Breathing Master",
+      "description": "Awarded for mastering breathing exercises.",
+      "image": "badges/breathing_master.png"
+    },
+    {
+      "name": "Calm and Collected",
+      "description": "Awarded for maintaining calmness in stressful situations.",
+      "image": "badges/calm_and_collected.png"
+    }
+  ]
+}

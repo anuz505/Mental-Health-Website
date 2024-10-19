@@ -97,7 +97,7 @@ body {
 }
 
 .lessons {
-  margin-left: 10%;
+  margin-left: 0%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -256,38 +256,6 @@ form {
   max-width: 100%;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-.twohands .Brain {
-  position: absolute;
-  height: 22%;
-  bottom: 30%;
-  right: 8%;
-  z-index: 5;
-  animation: brainflying 6s ease-in-out infinite;
-}
-
-.twohands .lefthand {
-  position: absolute;
-  bottom: 0;
-  right: 0; /* Position on the left */
-  height: 36.3%; /* Increased by 10% */
-  z-index: 3;
-  overflow: hidden;
-}
-
-.twohands .righthand {
-  position: absolute;
-  bottom: 0;
-  right: 0; /* Position on the left */
-  height: 52.8%; /* Increased by 10% */
-  z-index: 2;
-}
-
-.twohands .BackgroundGrass {
-  position: absolute;
-  bottom: 0;
-  right: -8%;
-  height: 44%; /* Increased by 10% */
 }
 
 /* Responsive Design */

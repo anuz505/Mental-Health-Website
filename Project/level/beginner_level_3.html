@@ -116,8 +116,6 @@
       // Get the button that opens the modal
       var btn = document.getElementById("next");
 
-      var continueBTN = document.getElementById("continue");
-
       var span = document.getElementsByClassName("close")[0];
 
       btn.onclick = () => {
@@ -127,9 +125,17 @@
         modal.style.display = "none";
       };
 
+      var continueBTN = document.getElementById("continue");
       continueBTN.onclick = () => {
+        // Get the existing badges from local storage or initialize an empty array
+        let badges = JSON.parse(localStorage.getItem("badges")) || [];
+
+        // Add the new badge to the array
+        badges.push("mindfulness_newbie");
+
+        // Store the updated array back in local storage
+        localStorage.setItem("badges", JSON.stringify(badges));
         window.location.href = "../lesson.html";
-        localStorage.setItem("lesson3 badge", "mindfulness_newbie");
       };
     </script>
   </body>
