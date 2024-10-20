@@ -9,7 +9,7 @@
     <header>
       <h1>AuraSync</h1>
       <nav>
-        <a href="#home">Home</a>
+        <a href="./index.html">Home</a>
         <a href="#about" class="active">About</a>
         <a href="/Project/lesson.html">Lessons</a>
         <a href="#Profile">Profile</a>
@@ -54,6 +54,7 @@
           </p>
         </div>
         <img
+          class="runningbrain"
           src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWZtajhqbnN4ZTlkM3RwcXFmMW1iY2FjYzdyaHdhcndkNjNibzIwdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LiauwXZqx2TKUI1ITW/giphy.webp"
         />
       </div>
@@ -189,4 +190,10 @@
       <p>&copy; 2024 AuraSync. All rights reserved.</p>
     </footer>
   </body>
+  <script>
+    const btn = document.querySelector(".btn");
+    btn.addEventListener("click", () => {
+      window.location.href = "/Project/lesson.html";
+    });
+  </script>
 </html>
