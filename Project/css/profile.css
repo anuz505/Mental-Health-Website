@@ -107,37 +107,6 @@ button#logout:hover {
   color: #cc5b4f;
 }
 
-/* Badge Section */
-.badge-section {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.badge-section h2 {
-  font-family: "Dela Gothic One", sans-serif;
-  font-size: 28px;
-  color: #192b3d;
-}
-
-#badges-container {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-#badges-container .badge {
-  width: 80px;
-  height: 80px;
-  background-color: #cc5b4f;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-family: "Albert Sans", sans-serif;
-  font-size: 14px;
-}
-
 /* Modal styles */
 .modal {
   display: none; /* Hidden by default */
@@ -205,6 +174,72 @@ button#logout:hover {
   margin-top: 20px;
 }
 
+/*Badges*/
+.hh {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: "Dela Gothic One", sans-serif;
+  color: #192b3d;
+  font-size: 2em;
+}
+.profile-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.badge {
+  border-color: #45a049;
+  background-color: #e6ffe6;
+  color: #192b3d;
+  border: 2px solid #cc5b4f;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 20px;
+}
+
+.badge img {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.badge h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  font-family: "Dela Gothic One", sans-serif;
+}
+
+.badge p {
+  font-size: 14px;
+  margin: 0;
+  font-family: "Albert Sans", sans-serif;
+}
+
+.badge:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.badge.active {
+  border-color: #45a049;
+  background-color: #e6ffe6;
+}
+.badge.inactive {
+  border-color: #ccc;
+  background-color: #f4f4f4;
+  color: #aaa;
+}
+.badge.inactive img {
+  filter: grayscale(100%);
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   .profile-pic {

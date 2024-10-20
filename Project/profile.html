@@ -45,9 +45,10 @@
         </div>
       </div>
     </div>
-    <div id="badges-container" class="profile-container">
-      <h2>Badges</h2>
+    <div class="hh">
+      <h2>Your Badges and Achievements</h2>
     </div>
+    <div id="badges-container" class="profile-container"></div>
     <!-- popup -->
     <div id="loginModal" class="modal">
       <div class="modal-content">
@@ -127,28 +128,35 @@
 
       location.reload();
     }
+    renderUsername();
+  </script>
+  <script type="module">
+    import badges from "./data/badges.js";
 
     // Fetch and display badges
+    // Fetch and display badges
     function fetchBadges() {
-      fetch("./data/badges.json")
-        .then((response) => response.json())
-        .then((data) => {
-          const badgesContainer = document.getElementById("badges-container");
-          data.badges.forEach((badge) => {
-            const badgeElement = document.createElement("div");
-            badgeElement.classList.add("badge");
-            badgeElement.innerHTML = `
-              <img src="${badge.image}" alt="${badge.name}">
-              <h3>${badge.name}</h3>
-              <p>${badge.description}</p>
-            `;
-            badgesContainer.appendChild(badgeElement);
-          });
-        })
-        .catch((error) => console.error("Error fetching badges:", error));
+      const badgesContainer = document.getElementById("badges-container");
+      const storedBadges = JSON.parse(localStorage.getItem("badges")) || [];
+
+      badges.forEach((badge) => {
+        const badgeElement = document.createElement("div");
+        badgeElement.classList.add("badge");
+        if (storedBadges.includes(badge.name)) {
+          badgeElement.classList.add("active");
+        } else {
+          badgeElement.classList.add("inactive");
+        }
+        badgeElement.innerHTML = `
+      <img src="${badge.image}" alt="${badge.name}">
+      <h3>${badge.name}</h3>
+      <p>${badge.description}</p>
+    `;
+        badgesContainer.appendChild(badgeElement);
+      });
     }
     //Initial render hai ta
-    renderUsername();
+
     fetchBadges();
   </script>
 </html>
