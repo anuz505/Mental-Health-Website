@@ -3,7 +3,7 @@
   --color-secondary: #2ecc71; /* Fresh Green */
   --color-accent: #e74c3c; /* Vivid Red */
   --color-background: #d4ccc5; /* Light Gray */
-  --color-text: #2c3e50; /* Dark Blue-Gray */
+  --color-text: #192b3d; /* Dark Blue-Gray */
   --color-white: #ffffff; /* White */
 }
 
@@ -50,6 +50,9 @@ body {
 .lessons {
   background-color: var(--color-background);
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .lesson1 {
   display: flex;
@@ -123,11 +126,12 @@ body {
 .text h1 {
   margin-bottom: 10px;
   font-size: 1.8rem;
+  color: #192b3d;
 }
 
 .text p {
   font-size: 1.2rem;
-  color: var(--color-secondary);
+  color: var(--color-text);
 }
 
 .timer-container {
@@ -184,10 +188,19 @@ body {
   cursor: pointer;
   margin-top: 20px;
   align-self: center;
+  transition: ease-in-out 0.3s;
 }
-
 .next:hover {
-  background-color: var(--color-secondary);
+  background-color: var(--color-text);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: ease-in-out 0.3s;
+}
+.next:disabled {
+  background-color: var(--color-accent);
+  color: white;
+  cursor: not-allowed;
 }
 
 /* popup */
@@ -224,6 +237,17 @@ body {
   margin-top: 20px;
 }
 #continue {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  align-self: center;
+}
+#home {
   background-color: var(--color-accent);
   color: var(--color-white);
   padding: 10px 20px;

@@ -22,6 +22,7 @@
           <h1 class="l1">Lesson 1</h1>
           <h1>Mindful Breathing</h1>
           <p>Do this for about 2-4 minutes.</p>
+          <p>Here, is the timer and you can start whenever you want.</p>
         </div>
         <div class="timer-container">
           <div class="timer-display" id="timer">00:00:00</div>
@@ -60,6 +61,7 @@
             Take a moment to notice how you feel. Your focus and calm have
             improved!
           </p>
+          <button id="home">Home</button>
           <button id="continue">Continue</button>
         </div>
       </div>
@@ -122,13 +124,25 @@
 
     var span = document.getElementsByClassName("close")[0];
 
+    var homeBTN = document.getElementById("home");
+
     btn.onclick = () => {
       modal.style.display = "block";
     };
     span.onclick = function () {
       modal.style.display = "none";
     };
+    homeBTN.onclick = () => {
+      // Get the existing badges from local storage or initialize an empty array
+      let badges = JSON.parse(localStorage.getItem("badges")) || [];
 
+      // Add the new badge to the array
+      badges.push("Calm Beginner");
+
+      // Store the updated array back in local storage
+      localStorage.setItem("badges", JSON.stringify(badges));
+      window.location.href = "/Project/index.html";
+    };
     continueBTN.onclick = () => {
       // Get the existing badges from local storage or initialize an empty array
       let badges = JSON.parse(localStorage.getItem("badges")) || [];

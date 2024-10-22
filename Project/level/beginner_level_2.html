@@ -21,20 +21,28 @@
         <div class="text">
           <h1 class="l1">Lesson 2</h1>
           <h1>Gratitude practice</h1>
-          <p>Write things you are grateful for fostering a postive thinking.</p>
+          <p>
+            Take a moment to pause and reflect on the things you're grateful for
+            today. Practicing gratitude can improve your mood and overall mental
+            well-being.
+          </p>
+          <br />
+          <p>
+            Fill in the fields with your thoughts. Be as specific as possible.
+          </p>
         </div>
       </div>
       <form id="gratitude-form" class="gratitude-form">
         <label>1.</label>
-        <textarea id="input1"></textarea>
+        <textarea id="input1" required></textarea>
         <label>2.</label>
-        <textarea id="input2"></textarea>
+        <textarea id="input2" required></textarea>
         <label>3.</label>
-        <textarea id="input3"></textarea>
+        <textarea id="input3" required></textarea>
         <button type="submit" class="next">Submit</button>
         <div class="submitted"></div>
       </form>
-      <button id="next" class="next">Next</button>
+      <button id="next" class="next" disabled>Next</button>
       <div id="myModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
@@ -72,6 +80,8 @@
           const submittedMessage = document.querySelector(".submitted");
           submittedMessage.innerHTML = "Submitted!";
           submittedMessage.classList.add("fade-in");
+          // Enable the "Next" button
+          document.getElementById("next").disabled = false;
 
           // Fade away the message after 3 seconds
           setTimeout(() => {

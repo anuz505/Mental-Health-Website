@@ -209,6 +209,80 @@ iframe {
   padding: 0;
   font-family: "Albert Sans";
 }
+
+/*Contact us*/
+.contact {
+  margin-top: 50px;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+.contact h1 {
+  margin-left: 30px;
+  font-size: 3rem;
+  z-index: 1;
+  position: relative;
+  color: #192b3d;
+  font-family: "Dela Gothic One";
+  font-weight: 400;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+}
+.row img {
+  border-radius: 20px;
+}
+
+form {
+  flex: 1;
+  background-color: #192b3d;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+  max-width: 500px;
+  width: 100%;
+}
+
+form h3 {
+  margin-bottom: 20px;
+  font-family: "Dela Gothic One", sans-serif;
+}
+
+form .box {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Albert Sans", sans-serif;
+}
+
+form .box::placeholder {
+  color: #ccc;
+}
+
+form .btn {
+  background-color: #cc5b4f;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+form .btn:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
 footer {
   background-color: #192b3d; /* Dark blue-gray background color */
   color: white; /* White text color for contrast */
