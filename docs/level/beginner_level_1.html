@@ -6,44 +6,24 @@
     <link rel="stylesheet" href="../css/individual_lesson.css" />
     <title>Beginner Lessons</title>
   </head>
-  <header style="background-color: white">
+  <header>
     <h1>AuraSync</h1>
     <nav>
       <a href="../index.html">Home</a>
       <a href="../aboutus.html">About</a>
-      <a href="/Project/lesson.html" class="active">Lessons</a>
+      <a href="/docs/lesson.html" class="active">Lessons</a>
       <a href="../profile.html">Profile</a>
     </nav>
   </header>
   <body>
-    <div class="lessons" style="margin-left: 0">
-      <div class="lesson1" style="height: 75vh">
-        <div class="text" style="width: 350px; padding: 20px">
+    <div class="lessons">
+      <div class="lesson1">
+        <div class="text">
           <h1 class="l1">Lesson 1</h1>
-          <h1>Box breathing</h1>
-          <p>10-15 minutes</p>
-          <p>
-            <b>Objective:</b> To develop deeper focus and awareness of breath,
-            helping to calm the mind and reduce stress.
-          </p>
-          <ul>
-            <li>
-              Sit in a comfortable position with your back straight. Continue
-              this pattern for 10 minutes, aiming to build a sense of inner
-              peace and calm.
-            </li>
-            <li>Close your eyes and bring your attention to your breath.</li>
-            <li>
-              Take slow, deep breaths, inhaling through your nose for 4 counts,
-              holding for 4, and exhaling for 4 counts.
-            </li>
-            <li>
-              As you breathe, let go of any thoughts that come into your mind,
-              bringing your focus back to your breath.
-            </li>
-          </ul>
+          <h1>Mindful Breathing</h1>
+          <p>Do this for about 2-4 minutes.</p>
+          <p>Here, is the timer and you can start whenever you want.</p>
         </div>
-
         <div class="timer-container">
           <div class="timer-display" id="timer">00:00:00</div>
           <div class="buttons">
@@ -53,23 +33,19 @@
           </div>
         </div>
       </div>
-      <div class="gif-box-breathing">
+      <div class="gif">
         <img
           loading="lazy"
           decoding="async"
-          width="700"
-          ;
-          height="385"
-          ;;
-          src="https://www.rhodeahead.com/sites/rhodeahead.com/files/field/image/IER-685753_Box_breathing_1280x800-FA2_0.gif"
+          width="400"
+          height="400"
+          src="https://opryshok.com/wp-content/uploads/2023/10/4-7-8 breathing.gif"
           data-lazy-type="image"
-          data-lazy-src="https://opryshok.com/wp-content/uploads/2023/10/4-7-8
-        breathing.gif"
+          data-lazy-src="https://opryshok.com/wp-content/uploads/2023/10/4-7-8 breathing.gif"
           alt="What is the 4-7-8 breathing method"
           class="lazy wp-image-3294 lazy-loaded"
         />
       </div>
-
       <button id="next" class="next">Next</button>
       <div id="myModal" class="modal">
         <!-- Modal content -->
@@ -77,15 +53,15 @@
           <span class="close">&times;</span>
 
           <h2>
-            🎉 Amazing Work! You've Mastered the Box Breathing Technique! 🎉
+            🎉 Congrats! You've Completed the Mindful Breathing Exercise! 🎉
           </h2>
-          <img src="../pics/badges/serenemind.jpeg" />
-          <b>Badge Earned: "Serene Mind" 🧘‍♂️</b>
+          <b>Badge Earned: "Calm Beginner" 🏅</b>
+          <img src="../pics/badges/Calmbeginner.jpeg" />
           <p>
-            You've successfully completed the box breathing exercise! Feel the
-            peace within you, and remember, this is a powerful tool to center
-            yourself anytime.
+            Take a moment to notice how you feel. Your focus and calm have
+            improved!
           </p>
+          <button id="home">Home</button>
           <button id="continue">Continue</button>
         </div>
       </div>
@@ -148,23 +124,35 @@
 
     var span = document.getElementsByClassName("close")[0];
 
+    var homeBTN = document.getElementById("home");
+
     btn.onclick = () => {
       modal.style.display = "block";
     };
     span.onclick = function () {
       modal.style.display = "none";
     };
+    homeBTN.onclick = () => {
+      // Get the existing badges from local storage or initialize an empty array
+      let badges = JSON.parse(localStorage.getItem("badges")) || [];
 
+      // Add the new badge to the array
+      badges.push("Calm Beginner");
+
+      // Store the updated array back in local storage
+      localStorage.setItem("badges", JSON.stringify(badges));
+      window.location.href = "/Project/index.html";
+    };
     continueBTN.onclick = () => {
       // Get the existing badges from local storage or initialize an empty array
       let badges = JSON.parse(localStorage.getItem("badges")) || [];
 
       // Add the new badge to the array
-      badges.push("serene_mind");
+      badges.push("Calm Beginner");
 
       // Store the updated array back in local storage
       localStorage.setItem("badges", JSON.stringify(badges));
-      window.location.href = "./intermediate_level_2.html";
+      window.location.href = "beginner_level_2.html";
     };
   </script>
 </html>
