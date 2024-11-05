@@ -1,6 +1,6 @@
 # AuraSync - Gamified Mental Health Website 🌱
 
-https://anuz505.github.io/Mental-Health-Website/
+Preview: https://anuz505.github.io/Mental-Health-Website/
 
 **An interactive platform designed to promote mental wellness through engaging and gamified exercises. AuraSync provides a structured, fun, and accessible way for users to practice mindfulness and mental health techniques at their own pace.**
 
